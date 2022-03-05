@@ -19,7 +19,7 @@ func doubleRequestHandler(c *gin.Context) {
 		return
 	}
 
-	if req.Number > 0 {
+	if req.Number < 0 {
 		c.AbortWithStatusJSON(http.StatusBadRequest, ErrorResponse{Err: ErrNumberPositive.Error()})
 		return
 	}
